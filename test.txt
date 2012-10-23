@@ -1,4 +1,4 @@
-5555555555/*
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -32,7 +32,7 @@ public class Table extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
+        this.a[2] = 1; //add bomb
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
