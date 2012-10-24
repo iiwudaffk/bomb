@@ -15,12 +15,16 @@ package agile;
  * @author admin
  */
 public class Table extends javax.swing.JFrame {
-
+	public int[] a = new int[4]; //test
     /** Creates new form Table */
     public Table() {
         initComponents();
+		this.b[0] = 0;
+		this.b[1] = 0;
+		this.b[2] = 1;
+		this.b[3] = 0;
     }
-    public int[] a = new int[4]; //test
+    
     
     //public int x1=0,x2=0,x3=1,x4=0;
 
