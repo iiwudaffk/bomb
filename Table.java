@@ -15,16 +15,14 @@ package agile;
  * @author admin
  */
 public class Table extends javax.swing.JFrame {
-	public int[] a = new int[4]; //test
+
     /** Creates new form Table */
     public Table() {
         initComponents();
-		this.b[0] = 0;
-		this.b[1] = 0;
-		this.b[2] = 1;
-		this.b[3] = 0;
     }
-    
+    public int[] a = new int[4];
+    public int[] status = new int[4];
+    public int playerTurn = 0;
     
     //public int x1=0,x2=0,x3=1,x4=0;
 
@@ -42,8 +40,8 @@ public class Table extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         label1 = new java.awt.Label();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +87,13 @@ public class Table extends javax.swing.JFrame {
 
         label1.setText("Player Turn");
 
+        jButton6.setText("0");
+        jButton6.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jButton6StateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,21 +110,22 @@ public class Table extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(155, 155, 155)
+                        .addComponent(jButton5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)))
                 .addContainerGap(166, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton6)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addGap(18, 18, 18)
@@ -140,24 +146,56 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 // TODO add your handling code here:
     jButton1.setBackground(new java.awt.Color(255, 0, 255));
     jButton1.setText(Integer.toString(a[0]));
+    if(playerTurn==0) {
+        playerTurn = 1;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
+    else if(playerTurn==1) {
+        playerTurn = 0;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 // TODO add your handling code here:
     jButton2.setBackground(new java.awt.Color(255, 0, 255));
     jButton2.setText(Integer.toString(a[1]));
+    if(playerTurn==0) {
+        playerTurn = 1;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
+    else if(playerTurn==1) {
+        playerTurn = 0;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
 }//GEN-LAST:event_jButton2ActionPerformed
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 // TODO add your handling code here:
     jButton3.setBackground(new java.awt.Color(255, 0, 255));
     jButton3.setText(Integer.toString(a[2]));
+    if(playerTurn==0) {
+        playerTurn = 1;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
+    else if(playerTurn==1) {
+        playerTurn = 0;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
 }//GEN-LAST:event_jButton3ActionPerformed
 
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 // TODO add your handling code here:
     jButton4.setBackground(new java.awt.Color(255, 0, 255));
     jButton4.setText(Integer.toString(a[3]));
+    if(playerTurn==0) {
+        playerTurn = 1;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
+    else if(playerTurn==1) {
+        playerTurn = 0;
+        jButton6.setText(Integer.toString(playerTurn));
+    }
 }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -170,11 +208,18 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton3.setText("");
         jButton4.setBackground(new java.awt.Color(153, 255, 255));
         jButton4.setText("");
+        playerTurn=0;
+        jButton6.setText(Integer.toString(playerTurn));
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton6StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6StateChanged
 
     /**
      * @param args the command line arguments
@@ -206,9 +251,22 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        //this.a[2] = 1;
+        
+/*
         Player p1 = new Player();
         Player p2 = new Player();
+        
+        p1.setPlayerNumber(1);
+        p1.setTurn(true);
+        
+        p2.setPlayerNumber(2);
+        p2.setTurn(false);
+*/
+        
+        
+        
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -224,7 +282,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jButton6;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }
