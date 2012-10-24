@@ -9,20 +9,44 @@
  * Created on Oct 23, 2012, 1:41:32 PM
  */
 package agile;
+import java.util.*;
+
+import javax.swing.*;
 
 /**
  *
  * @author admin
  */
 public class Table extends javax.swing.JFrame {
-
-    /** Creates new form Table */
-    public Table() {
-        initComponents();
-    }
-    public int[] a = new int[36];
+    public String[] a = new String[36];
     public int[] status = new int[4];
     public int playerTurn = 0;
+    public int selectvalue;
+    Random generator = new Random();
+    /** Creates new form Table */
+    public void genbomb(){
+         List<Integer> generatedNumbers = new ArrayList<Integer>();
+        for(int i=0; i<36; i++) { //generate 10 numbers
+                generatedNumbers.add(i);
+        }
+        Collections.shuffle(generatedNumbers);
+        //System.out.println(generatedNumbers);
+        for(int j = 0 ; j<36 ; j++){
+        	a[j] = "X";
+        }
+        List<Integer> selectedNumbers = new ArrayList<Integer>();
+        for(int j=0; j<10; j++) { //select only 5 number
+                selectedNumbers.add(generatedNumbers.get(j));
+                selectvalue = selectedNumbers.get(j);  
+                a[selectvalue] = "O";
+        }
+        //System.out.println(selectvalue);
+    }
+    public Table() {
+        initComponents();
+        genbomb();
+    }
+    
     
     //public int x1=0,x2=0,x3=1,x4=0;
 
@@ -503,11 +527,16 @@ public class Table extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+private void check(String b){
+	if(b == "O"){
+		JOptionPane.showMessageDialog(null,"[You Lose !!!]");
+	}
+}
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
     jButton1.setBackground(new java.awt.Color(255, 0, 255));
-    jButton1.setText(Integer.toString(a[0]));
+    jButton1.setText(a[0]);
+    check(a[0]);
     if(playerTurn==0) {
         playerTurn = 1;
         jButton6.setText(Integer.toString(playerTurn));
@@ -521,7 +550,8 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 // TODO add your handling code here:
     jButton2.setBackground(new java.awt.Color(255, 0, 255));
-    jButton2.setText(Integer.toString(a[1]));
+    jButton2.setText(a[1]);
+    check(a[1]);
     if(playerTurn==0) {
         playerTurn = 1;
         jButton6.setText(Integer.toString(playerTurn));
@@ -535,7 +565,8 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 // TODO add your handling code here:
     jButton3.setBackground(new java.awt.Color(255, 0, 255));
-    jButton3.setText(Integer.toString(a[2]));
+    jButton3.setText(a[2]);
+    check(a[2]);
     if(playerTurn==0) {
         playerTurn = 1;
         jButton6.setText(Integer.toString(playerTurn));
@@ -549,7 +580,8 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 // TODO add your handling code here:
     jButton4.setBackground(new java.awt.Color(255, 0, 255));
-    jButton4.setText(Integer.toString(a[3]));
+    jButton4.setText(a[3]);
+    check(a[3]);
     if(playerTurn==0) {
         playerTurn = 1;
         jButton6.setText(Integer.toString(playerTurn));
@@ -638,6 +670,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         playerTurn=0;
         jButton6.setText(Integer.toString(playerTurn));
+        genbomb();
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -652,7 +685,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         jButton7.setBackground(new java.awt.Color(255, 0, 255));
-        jButton7.setText(Integer.toString(a[4]));
+        jButton7.setText(a[4]);
+        check(a[4]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -666,7 +700,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         jButton8.setBackground(new java.awt.Color(255, 0, 255));
-        jButton8.setText(Integer.toString(a[5]));
+        jButton8.setText(a[5]);
+        check(a[5]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -680,7 +715,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         jButton9.setBackground(new java.awt.Color(255, 0, 255));
-        jButton9.setText(Integer.toString(a[6]));
+        jButton9.setText(a[6]);
+        check(a[6]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -694,7 +730,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         jButton10.setBackground(new java.awt.Color(255, 0, 255));
-        jButton10.setText(Integer.toString(a[7]));
+        jButton10.setText(a[7]);
+        check(a[7]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -708,7 +745,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         jButton11.setBackground(new java.awt.Color(255, 0, 255));
-        jButton11.setText(Integer.toString(a[8]));
+        jButton11.setText(a[8]);
+        check(a[8]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -722,7 +760,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         jButton12.setBackground(new java.awt.Color(255, 0, 255));
-        jButton12.setText(Integer.toString(a[9]));
+        jButton12.setText(a[9]);
+        check(a[9]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -736,7 +775,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         jButton13.setBackground(new java.awt.Color(255, 0, 255));
-        jButton13.setText(Integer.toString(a[10]));
+        jButton13.setText(a[10]);
+        check(a[10]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -750,7 +790,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         jButton14.setBackground(new java.awt.Color(255, 0, 255));
-        jButton14.setText(Integer.toString(a[11]));
+        jButton14.setText(a[11]);
+        check(a[11]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -764,7 +805,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         jButton15.setBackground(new java.awt.Color(255, 0, 255));
-        jButton15.setText(Integer.toString(a[12]));
+        jButton15.setText(a[12]);
+        check(a[12]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -778,7 +820,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
         jButton16.setBackground(new java.awt.Color(255, 0, 255));
-        jButton16.setText(Integer.toString(a[13]));
+        jButton16.setText(a[13]);
+        check(a[13]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -792,7 +835,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         jButton17.setBackground(new java.awt.Color(255, 0, 255));
-        jButton17.setText(Integer.toString(a[14]));
+        jButton17.setText(a[14]);
+        check(a[14]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -806,7 +850,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         jButton18.setBackground(new java.awt.Color(255, 0, 255));
-        jButton18.setText(Integer.toString(a[15]));
+        jButton18.setText(a[15]);
+        check(a[15]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -820,7 +865,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
         jButton19.setBackground(new java.awt.Color(255, 0, 255));
-        jButton19.setText(Integer.toString(a[16]));
+        jButton19.setText(a[16]);
+        check(a[16]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -834,7 +880,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
                 jButton20.setBackground(new java.awt.Color(255, 0, 255));
-        jButton20.setText(Integer.toString(a[17]));
+        jButton20.setText(a[17]);
+        check(a[17]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -848,7 +895,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
                 jButton21.setBackground(new java.awt.Color(255, 0, 255));
-        jButton21.setText(Integer.toString(a[18]));
+        jButton21.setText(a[18]);
+        check(a[18]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -862,7 +910,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
                 jButton22.setBackground(new java.awt.Color(255, 0, 255));
-        jButton22.setText(Integer.toString(a[19]));
+        jButton22.setText(a[19]);
+        check(a[19]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -876,7 +925,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
                 jButton23.setBackground(new java.awt.Color(255, 0, 255));
-        jButton23.setText(Integer.toString(a[20]));
+        jButton23.setText(a[20]);
+        check(a[20]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -890,7 +940,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         // TODO add your handling code here:
                 jButton24.setBackground(new java.awt.Color(255, 0, 255));
-        jButton24.setText(Integer.toString(a[21]));
+        jButton24.setText(a[21]);
+        check(a[21]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -904,7 +955,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
                 jButton25.setBackground(new java.awt.Color(255, 0, 255));
-        jButton25.setText(Integer.toString(a[22]));
+        jButton25.setText(a[22]);
+        check(a[22]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -918,7 +970,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         // TODO add your handling code here:
                 jButton26.setBackground(new java.awt.Color(255, 0, 255));
-        jButton26.setText(Integer.toString(a[23]));
+        jButton26.setText(a[23]);
+        check(a[23]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -932,7 +985,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         // TODO add your handling code here:
                 jButton27.setBackground(new java.awt.Color(255, 0, 255));
-        jButton27.setText(Integer.toString(a[24]));
+        jButton27.setText(a[24]);
+        check(a[24]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -946,7 +1000,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         // TODO add your handling code here:
                 jButton28.setBackground(new java.awt.Color(255, 0, 255));
-        jButton28.setText(Integer.toString(a[25]));
+        jButton28.setText(a[25]);
+        check(a[25]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -960,7 +1015,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
                 jButton29.setBackground(new java.awt.Color(255, 0, 255));
-        jButton29.setText(Integer.toString(a[26]));
+        jButton29.setText(a[26]);
+        check(a[26]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -974,7 +1030,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         // TODO add your handling code here:
                 jButton30.setBackground(new java.awt.Color(255, 0, 255));
-        jButton30.setText(Integer.toString(a[27]));
+        jButton30.setText(a[27]);
+        check(a[27]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -988,7 +1045,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
                 jButton31.setBackground(new java.awt.Color(255, 0, 255));
-        jButton31.setText(Integer.toString(a[28]));
+        jButton31.setText(a[28]);
+        check(a[28]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1002,7 +1060,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
                 jButton32.setBackground(new java.awt.Color(255, 0, 255));
-        jButton32.setText(Integer.toString(a[29]));
+        jButton32.setText(a[29]);
+        check(a[29]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1016,7 +1075,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         // TODO add your handling code here:
                 jButton33.setBackground(new java.awt.Color(255, 0, 255));
-        jButton33.setText(Integer.toString(a[30]));
+        jButton33.setText(a[30]);
+        check(a[30]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1030,7 +1090,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
                 jButton34.setBackground(new java.awt.Color(255, 0, 255));
-        jButton34.setText(Integer.toString(a[31]));
+        jButton34.setText(a[31]);
+        check(a[31]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1044,7 +1105,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
                 jButton35.setBackground(new java.awt.Color(255, 0, 255));
-        jButton35.setText(Integer.toString(a[32]));
+        jButton35.setText(a[32]);
+        check(a[32]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1058,7 +1120,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
         // TODO add your handling code here:
                 jButton36.setBackground(new java.awt.Color(255, 0, 255));
-        jButton36.setText(Integer.toString(a[33]));
+        jButton36.setText(a[33]);
+        check(a[33]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1072,7 +1135,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
         // TODO add your handling code here:
                 jButton37.setBackground(new java.awt.Color(255, 0, 255));
-        jButton37.setText(Integer.toString(a[34]));
+        jButton37.setText(a[34]);
+        check(a[34]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
@@ -1086,7 +1150,8 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
         jButton38.setBackground(new java.awt.Color(255, 0, 255));
-        jButton38.setText(Integer.toString(a[35]));
+        jButton38.setText(a[35]);
+        check(a[35]);
         if(playerTurn==0) {
             playerTurn = 1;
             jButton6.setText(Integer.toString(playerTurn));
