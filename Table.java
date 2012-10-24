@@ -20,7 +20,7 @@ public class Table extends javax.swing.JFrame {
     public Table() {
         initComponents();
     }
-    public int[] a = new int[4];
+    public int[] a = new int[4]; //test
     
     //public int x1=0,x2=0,x3=1,x4=0;
 
