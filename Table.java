@@ -529,9 +529,10 @@ public class Table extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    Icon carIcon = new ImageIcon("10584701-you-lose.jpg");
 private void check(String b){
 	if(b == "O"){
-		JOptionPane.showMessageDialog(null,"[You Lose !!!]");
+		JOptionPane.showMessageDialog(null, null, "You....Lose",0, carIcon);
 	}
 }
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
