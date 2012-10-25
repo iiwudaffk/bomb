@@ -10,8 +10,15 @@
  */
 package agile;
 import java.util.*;
-
+import java.io.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
+
+import sun.applet.Main;
+import sun.audio.*;
+
 
 /**
  *
@@ -26,13 +33,23 @@ public class Table extends javax.swing.JFrame {
     Icon icon = new ImageIcon("bome_internet_resize.jpg");
     Icon icon1 = new ImageIcon("07_resize.jpg");
     /** Creates new form Table */
+    static AudioStream as;
+    public static void IDatabase() {
+       try {
+          InputStream in = new FileInputStream("bomb.wav");
+          as = new AudioStream(in);
+          AudioPlayer.player.start(as);
+       } catch (IOException e) {
+
+       }
+    }
     public void genbomb(){
          List<Integer> generatedNumbers = new ArrayList<Integer>();
         for(int i=0; i<36; i++) { //generate 10 numbers
                 generatedNumbers.add(i);
         }
         Collections.shuffle(generatedNumbers);
-        //System.out.println(generatedNumbers);
+
         for(int j = 0 ; j<36 ; j++){
         	a[j] = "X";
         }
@@ -42,11 +59,12 @@ public class Table extends javax.swing.JFrame {
                 selectvalue = selectedNumbers.get(j);  
                 a[selectvalue] = "O";
         }
-        //System.out.println(selectvalue);
+
     }
     public Table() {
         initComponents();
         genbomb();
+        
     }
     
     
@@ -540,6 +558,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     jButton1.setBackground(new java.awt.Color(255, 255, 255));
     if(a[0]=="O"){
 		jButton1.setIcon(icon);
+		IDatabase();
 	}
     else if(a[0] == "X"){
     	jButton1.setIcon(icon1);
@@ -553,6 +572,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton6.setText(Integer.toString(playerTurn));
     }
     check(a[0]);
+    jButton1.setEnabled(false);
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -560,6 +580,7 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     jButton2.setBackground(new java.awt.Color(255, 0, 255));
     if(a[1]=="O"){
 		jButton2.setIcon(icon);
+		IDatabase();
 	}
     else if(a[1] == "X"){
     	jButton2.setIcon(icon1);
@@ -574,6 +595,7 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton6.setText(Integer.toString(playerTurn));
     }
     check(a[1]);
+    jButton2.setEnabled(false);
 }//GEN-LAST:event_jButton2ActionPerformed
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -581,6 +603,7 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     jButton3.setBackground(new java.awt.Color(255, 0, 255));
     if(a[2]=="O"){
 		jButton3.setIcon(icon);
+		IDatabase();
 	}
     else if(a[2] == "X"){
     	jButton3.setIcon(icon1);
@@ -595,6 +618,7 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton6.setText(Integer.toString(playerTurn));
     }
     check(a[2]);
+    jButton3.setEnabled(false);
 }//GEN-LAST:event_jButton3ActionPerformed
 
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -602,6 +626,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     jButton4.setBackground(new java.awt.Color(255, 0, 255));
     if(a[3]=="O"){
 		jButton4.setIcon(icon);
+		IDatabase();
 	}
     else if(a[3] == "X"){
     	jButton4.setIcon(icon1);
@@ -616,6 +641,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton6.setText(Integer.toString(playerTurn));
     }
     check(a[3]);
+    jButton4.setEnabled(false);
 }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -658,6 +684,42 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton36.setIcon(null);
         jButton37.setIcon(null);
         jButton38.setIcon(null);
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(true);
+        jButton3.setEnabled(true);
+        jButton4.setEnabled(true);
+        jButton7.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButton9.setEnabled(true);
+        jButton10.setEnabled(true);
+        jButton11.setEnabled(true);
+        jButton12.setEnabled(true);
+        jButton13.setEnabled(true);
+        jButton14.setEnabled(true);
+        jButton15.setEnabled(true);
+        jButton16.setEnabled(true);
+        jButton17.setEnabled(true);
+        jButton18.setEnabled(true);
+        jButton19.setEnabled(true);
+        jButton20.setEnabled(true);
+        jButton21.setEnabled(true);
+        jButton22.setEnabled(true);
+        jButton23.setEnabled(true);
+        jButton24.setEnabled(true);
+        jButton25.setEnabled(true);
+        jButton26.setEnabled(true);
+        jButton27.setEnabled(true);
+        jButton28.setEnabled(true);
+        jButton29.setEnabled(true);
+        jButton30.setEnabled(true);
+        jButton31.setEnabled(true);
+        jButton32.setEnabled(true);
+        jButton33.setEnabled(true);
+        jButton34.setEnabled(true);
+        jButton35.setEnabled(true);
+        jButton36.setEnabled(true);
+        jButton37.setEnabled(true);
+        jButton38.setEnabled(true);
         jButton2.setBackground(new java.awt.Color(153, 255, 255));
         jButton2.setText("");
         jButton3.setBackground(new java.awt.Color(153, 255, 255));
@@ -749,6 +811,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton7.setBackground(new java.awt.Color(255, 0, 255));
         if(a[4]=="O"){
     		jButton7.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[4] == "X"){
         	jButton7.setIcon(icon1);
@@ -763,6 +826,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[4]);
+        jButton7.setEnabled(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -770,6 +834,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton8.setBackground(new java.awt.Color(255, 0, 255));
         if(a[5]=="O"){
     		jButton8.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[5] == "X"){
         	jButton8.setIcon(icon1);
@@ -784,6 +849,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[5]);
+        jButton8.setEnabled(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -791,6 +857,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton9.setBackground(new java.awt.Color(255, 0, 255));
         if(a[6]=="O"){
     		jButton9.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[6] == "X"){
         	jButton9.setIcon(icon1);
@@ -805,6 +872,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[6]);
+        jButton9.setEnabled(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -812,6 +880,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton10.setBackground(new java.awt.Color(255, 0, 255));
         if(a[7]=="O"){
     		jButton10.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[7] == "X"){
         	jButton10.setIcon(icon1);
@@ -827,6 +896,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
         
         check(a[7]);
+        jButton10.setEnabled(false);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -834,6 +904,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton11.setBackground(new java.awt.Color(255, 0, 255));
         if(a[8]=="O"){
     		jButton11.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[8] == "X"){
         	jButton11.setIcon(icon1);
@@ -848,6 +919,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[8]);
+        jButton11.setEnabled(false);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -855,6 +927,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton12.setBackground(new java.awt.Color(255, 0, 255));
         if(a[9]=="O"){
     		jButton12.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[9] == "X"){
         	jButton12.setIcon(icon1);
@@ -869,6 +942,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[9]);
+        jButton12.setEnabled(false);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -876,6 +950,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton13.setBackground(new java.awt.Color(255, 0, 255));
         if(a[10]=="O"){
     		jButton13.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[10] == "X"){
         	jButton13.setIcon(icon1);
@@ -890,6 +965,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[10]);
+        jButton13.setEnabled(false);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -897,6 +973,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton14.setBackground(new java.awt.Color(255, 0, 255));
         if(a[11]=="O"){
     		jButton14.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[11] == "X"){
         	jButton14.setIcon(icon1);
@@ -911,6 +988,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[11]);
+        jButton14.setEnabled(false);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -918,6 +996,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton15.setBackground(new java.awt.Color(255, 0, 255));
         if(a[12]=="O"){
     		jButton15.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[12] == "X"){
         	jButton15.setIcon(icon1);
@@ -931,6 +1010,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[12]);
+        jButton15.setEnabled(false);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -938,6 +1018,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton16.setBackground(new java.awt.Color(255, 0, 255));
         if(a[13]=="O"){
     		jButton16.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[13] == "X"){
         	jButton16.setIcon(icon1);
@@ -952,6 +1033,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[13]);
+        jButton16.setEnabled(false);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -959,6 +1041,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton17.setBackground(new java.awt.Color(255, 0, 255));
         if(a[14]=="O"){
     		jButton17.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[14] == "X"){
         	jButton17.setIcon(icon1);
@@ -973,6 +1056,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[14]);
+        jButton17.setEnabled(false);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -980,6 +1064,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton18.setBackground(new java.awt.Color(255, 0, 255));
         if(a[15]=="O"){
     		jButton18.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[15] == "X"){
         	jButton18.setIcon(icon1);
@@ -994,6 +1079,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[15]);
+        jButton18.setEnabled(false);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -1001,6 +1087,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton19.setBackground(new java.awt.Color(255, 0, 255));
         if(a[16]=="O"){
     		jButton19.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[16] == "X"){
         	jButton19.setIcon(icon1);
@@ -1015,6 +1102,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[16]);
+        jButton19.setEnabled(false);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
@@ -1022,6 +1110,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton20.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[17]=="O"){
             		jButton20.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[17] == "X"){
                 	jButton20.setIcon(icon1);
@@ -1036,6 +1125,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[17]);
+        jButton20.setEnabled(false);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -1043,6 +1133,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton21.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[18]=="O"){
             		jButton21.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[18] == "X"){
                 	jButton21.setIcon(icon1);
@@ -1057,6 +1148,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[18]);
+        jButton21.setEnabled(false);
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
@@ -1064,6 +1156,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton22.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[19]=="O"){
             		jButton22.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[19] == "X"){
                 	jButton22.setIcon(icon1);
@@ -1078,6 +1171,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[19]);
+        jButton22.setEnabled(false);
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -1085,6 +1179,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton23.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[20]=="O"){
             		jButton23.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[20] == "X"){
                 	jButton23.setIcon(icon1);
@@ -1099,6 +1194,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[20]);
+        jButton23.setEnabled(false);
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
@@ -1106,6 +1202,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton24.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[21]=="O"){
             		jButton24.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[21] == "X"){
                 	jButton24.setIcon(icon1);
@@ -1120,6 +1217,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[21]);
+        jButton24.setEnabled(false);
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -1127,6 +1225,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton25.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[22]=="O"){
             		jButton25.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[22] == "X"){
                 	jButton25.setIcon(icon1);
@@ -1141,6 +1240,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[22]);
+        jButton25.setEnabled(false);
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -1148,6 +1248,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton26.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[23]=="O"){
             		jButton26.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[23] == "X"){
                 	jButton26.setIcon(icon1);
@@ -1162,6 +1263,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[23]);
+        jButton26.setEnabled(false);
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
@@ -1169,6 +1271,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton27.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[24]=="O"){
             		jButton27.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[24] == "X"){
                 	jButton27.setIcon(icon1);
@@ -1183,6 +1286,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[24]);
+        jButton27.setEnabled(false);
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
@@ -1190,6 +1294,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton28.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[25]=="O"){
             		jButton28.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[25] == "X"){
                 	jButton28.setIcon(icon1);
@@ -1204,6 +1309,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[25]);
+        jButton28.setEnabled(false);
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
@@ -1211,6 +1317,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton29.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[26]=="O"){
             		jButton29.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[26] == "X"){
                 	jButton29.setIcon(icon1);
@@ -1225,6 +1332,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[26]);
+        jButton29.setEnabled(false);
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
@@ -1232,6 +1340,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton30.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[27]=="O"){
             		jButton30.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[27] == "X"){
                 	jButton30.setIcon(icon1);
@@ -1246,6 +1355,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[27]);
+        jButton30.setEnabled(false);
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
@@ -1253,6 +1363,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton31.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[28]=="O"){
             		jButton31.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[28] == "X"){
                 	jButton31.setIcon(icon1);
@@ -1267,6 +1378,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[28]);
+        jButton31.setEnabled(false);
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
@@ -1274,6 +1386,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton32.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[29]=="O"){
             		jButton32.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[29] == "X"){
                 	jButton32.setIcon(icon1);
@@ -1288,6 +1401,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[29]);
+        jButton32.setEnabled(false);
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
@@ -1295,6 +1409,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton33.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[30]=="O"){
             		jButton33.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[30] == "X"){
                 	jButton33.setIcon(icon1);
@@ -1309,6 +1424,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[30]);
+        jButton33.setEnabled(false);
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
@@ -1316,6 +1432,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton34.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[31]=="O"){
             		jButton34.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[31] == "X"){
                 	jButton34.setIcon(icon1);
@@ -1330,6 +1447,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[31]);
+        jButton34.setEnabled(false);
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
@@ -1337,6 +1455,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton35.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[32]=="O"){
             		jButton35.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[32] == "X"){
                 	jButton35.setIcon(icon1);
@@ -1351,6 +1470,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[32]);
+        jButton35.setEnabled(false);
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
@@ -1358,6 +1478,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton36.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[33]=="O"){
             		jButton36.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[33] == "X"){
                 	jButton36.setIcon(icon1);
@@ -1372,6 +1493,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[33]);
+        jButton36.setEnabled(false);
     }//GEN-LAST:event_jButton36ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
@@ -1379,6 +1501,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 jButton37.setBackground(new java.awt.Color(255, 0, 255));
                 if(a[34]=="O"){
             		jButton37.setIcon(icon);
+            		IDatabase();
             	}
                 else if(a[34] == "X"){
                 	jButton37.setIcon(icon1);
@@ -1393,6 +1516,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[34]);
+        jButton37.setEnabled(false);
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
@@ -1400,6 +1524,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton38.setBackground(new java.awt.Color(255, 0, 255));
         if(a[35]=="O"){
     		jButton38.setIcon(icon);
+    		IDatabase();
     	}
         else if(a[35] == "X"){
         	jButton38.setIcon(icon1);
@@ -1414,12 +1539,16 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             jButton6.setText(Integer.toString(playerTurn));
         }
         check(a[35]);
+        jButton38.setEnabled(false);
     }//GEN-LAST:event_jButton38ActionPerformed
 
     /**
      * @param args the command line arguments
+     * @return 
+     * @throws IOException 
+     * @throws UnsupportedAudioFileException 
+     * @throws LineUnavailableException 
      */
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1428,7 +1557,6 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
          */
         
         //a[0] = Table.b();
-        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -1447,18 +1575,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
         //</editor-fold>
         
-        //this.a[2] = 1;
-        
-/*
-        Player p1 = new Player();
-        Player p2 = new Player();
-        
-        p1.setPlayerNumber(1);
-        p1.setTurn(true);
-        
-        p2.setPlayerNumber(2);
-        p2.setTurn(false);
-*/
+
         
         
         
@@ -1466,7 +1583,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
-            public void run() {
+            public void run(){
                 new Table().setVisible(true);
             }
         });
