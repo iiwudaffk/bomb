@@ -37,7 +37,7 @@ public class Table extends javax.swing.JFrame {
         	a[j] = "X";
         }
         List<Integer> selectedNumbers = new ArrayList<Integer>();
-        for(int j=0; j<10; j++) { //select only 5 number
+        for(int j=0; j<6; j++) { //select only 5 number
                 selectedNumbers.add(generatedNumbers.get(j));
                 selectvalue = selectedNumbers.get(j);  
                 a[selectvalue] = "O";
