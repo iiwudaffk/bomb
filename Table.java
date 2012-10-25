@@ -27,6 +27,8 @@ public class Table extends javax.swing.JFrame {
     Random generator = new Random();
     Icon icon = new ImageIcon("bome_internet_resize.jpg");
     Icon icon1 = new ImageIcon("07_resize.jpg");
+    Icon icon2 = new ImageIcon("1_resize.png");
+    Icon icon3 = new ImageIcon("2_resize.jpg");
     /** Creates new form Table */
     static AudioStream as;
     static AudioStream as1;
@@ -70,7 +72,7 @@ public class Table extends javax.swing.JFrame {
     public Table() {
         initComponents();
         genbomb();
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
         IDatabase1();
         
     }
@@ -631,11 +633,11 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     if(playerTurn==0) {
         playerTurn = 1;
-        jButton6.setText("Player 2");
+        jButton6.setIcon(icon2);
     }
     else if(playerTurn==1) {
         playerTurn = 0;
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
     }
     check(a[0]);
     jButton1.setEnabled(false);
@@ -654,11 +656,11 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
     if(playerTurn==0) {
         playerTurn = 1;
-        jButton6.setText("Player 2");
+        jButton6.setIcon(icon2);
     }
     else if(playerTurn==1) {
         playerTurn = 0;
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
     }
     check(a[1]);
     jButton2.setEnabled(false);
@@ -677,11 +679,11 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
     if(playerTurn==0) {
         playerTurn = 1;
-        jButton6.setText("Player 2");
+        jButton6.setIcon(icon2);
     }
     else if(playerTurn==1) {
         playerTurn = 0;
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
     }
     check(a[2]);
     jButton3.setEnabled(false);
@@ -700,11 +702,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
     if(playerTurn==0) {
         playerTurn = 1;
-        jButton6.setText("Player 2");
+        jButton6.setIcon(icon2);
     }
     else if(playerTurn==1) {
         playerTurn = 0;
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
     }
     check(a[3]);
     jButton4.setEnabled(false);
@@ -859,8 +861,9 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         jButton38.setText("");
         
         playerTurn=0;
-        jButton6.setText("Player 1");
+        jButton6.setIcon(icon3);
         genbomb();
+		AudioPlayer.player.stop(as1);
         IDatabase1();
 
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -886,11 +889,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[4]);
         jButton7.setEnabled(false);
@@ -909,11 +912,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[5]);
         jButton8.setEnabled(false);
@@ -932,11 +935,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[6]);
         jButton9.setEnabled(false);
@@ -955,11 +958,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         
         check(a[7]);
@@ -979,11 +982,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[8]);
         jButton11.setEnabled(false);
@@ -1002,11 +1005,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[9]);
         jButton12.setEnabled(false);
@@ -1025,11 +1028,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[10]);
         jButton13.setEnabled(false);
@@ -1048,11 +1051,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[11]);
         jButton14.setEnabled(false);
@@ -1070,11 +1073,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[12]);
         jButton15.setEnabled(false);
@@ -1093,11 +1096,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[13]);
         jButton16.setEnabled(false);
@@ -1116,11 +1119,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[14]);
         jButton17.setEnabled(false);
@@ -1139,11 +1142,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[15]);
         jButton18.setEnabled(false);
@@ -1162,11 +1165,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[16]);
         jButton19.setEnabled(false);
@@ -1185,11 +1188,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[17]);
         jButton20.setEnabled(false);
@@ -1208,11 +1211,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[18]);
         jButton21.setEnabled(false);
@@ -1231,11 +1234,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[19]);
         jButton22.setEnabled(false);
@@ -1254,11 +1257,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[20]);
         jButton23.setEnabled(false);
@@ -1277,11 +1280,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[21]);
         jButton24.setEnabled(false);
@@ -1300,11 +1303,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[22]);
         jButton25.setEnabled(false);
@@ -1323,11 +1326,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[23]);
         jButton26.setEnabled(false);
@@ -1346,11 +1349,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[24]);
         jButton27.setEnabled(false);
@@ -1369,11 +1372,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[25]);
         jButton28.setEnabled(false);
@@ -1392,11 +1395,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[26]);
         jButton29.setEnabled(false);
@@ -1415,11 +1418,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[27]);
         jButton30.setEnabled(false);
@@ -1438,11 +1441,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[28]);
         jButton31.setEnabled(false);
@@ -1461,11 +1464,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[29]);
         jButton32.setEnabled(false);
@@ -1484,11 +1487,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[30]);
         jButton33.setEnabled(false);
@@ -1507,11 +1510,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[31]);
         jButton34.setEnabled(false);
@@ -1530,11 +1533,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[32]);
         jButton35.setEnabled(false);
@@ -1553,11 +1556,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
        
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[33]);
         jButton36.setEnabled(false);
@@ -1576,11 +1579,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[34]);
         jButton37.setEnabled(false);
@@ -1599,11 +1602,11 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         if(playerTurn==0) {
             playerTurn = 1;
-            jButton6.setText("Player 2");
+            jButton6.setIcon(icon2);
         }
         else if(playerTurn==1) {
             playerTurn = 0;
-            jButton6.setText("Player 1");
+            jButton6.setIcon(icon3);
         }
         check(a[35]);
         jButton38.setEnabled(false);
