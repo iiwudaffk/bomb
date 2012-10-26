@@ -26,11 +26,12 @@ public class Table extends javax.swing.JFrame {
     public int selectvalue;
     public int sumbomb1 = 0 ;
     Random generator = new Random();
-    Icon icon = new ImageIcon("bome_internet_resize_resize.jpg");
-    Icon icon1 = new ImageIcon("07_resize_resize.jpg");
+    Icon icon = new ImageIcon("bome_internet_resize_resize_resize.jpg");
+    Icon icon1 = new ImageIcon("07_resize_resize_resize.jpg");
     Icon icon2 = new ImageIcon("1_resize.png");
     Icon icon3 = new ImageIcon("2_resize.jpg");
-    Icon carIcon = new ImageIcon("10584701-you-lose.jpg");
+    Icon icon4 = new ImageIcon("05.jpg");
+    Icon carIcon = new ImageIcon("06.gif");
     /** Creates new form Table */
     static AudioStream as;
     static AudioStream as1;
@@ -82,7 +83,8 @@ public class Table extends javax.swing.JFrame {
     }
     public Table() {
         initComponents();
-        JOptionPane.showMessageDialog(null, null, "Welcome To Bomber Boom Boom",0, carIcon);
+        JOptionPane.showMessageDialog(null, null, "ยินดีตอนรับเข้าสู่เกมส์ ^^เฮ้ย! ระเบิด.ตุ้มๆๆ!!^^",0, icon4);
+        JOptionPane.showMessageDialog(null, "กติกาการเล่น \n 1.ใส่จำนวนระเบิดที่ต้องการโดยค่าน้อยสุดคือ 1 มากสุดคือ 35 \n 2.ผู้ใดที่พบเจอระเบิด ถือว่าเป็นผู้แพ้ และเกมจบลงทันที \n 3.ปุ่ม Reset ไว้สำหรับการเริ่มเกมส์ใหม่", "ยินดีตอนรับเข้าสู่เกมส์ ^^เฮ้ย! ระเบิด.ตุ้มๆๆ!!^^",0,null);
         genbomb();
         jButton6.setIcon(icon3);
         IDatabase1();
