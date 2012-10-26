@@ -27,17 +27,23 @@ public class Table extends javax.swing.JFrame {
     public int sumbomb1 = 0 ;
     Random generator = new Random();
 <<<<<<< HEAD
+<<<<<<< HEAD
     Icon icon = new ImageIcon("bome_internet_resize.jpg");
     Icon icon1 = new ImageIcon("07_resize.jpg");
     Icon icon2 = new ImageIcon("1_resize.png");
     Icon icon3 = new ImageIcon("2_resize.jpg");
 =======
+=======
+>>>>>>> origin/Yo
     Icon icon = new ImageIcon("bome_internet_resize_resize_resize.jpg");
     Icon icon1 = new ImageIcon("07_resize_resize_resize.jpg");
     Icon icon2 = new ImageIcon("1_resize.png");
     Icon icon3 = new ImageIcon("2_resize.jpg");
     Icon icon4 = new ImageIcon("05.jpg");
     Icon carIcon = new ImageIcon("06.gif");
+<<<<<<< HEAD
+>>>>>>> origin/Yo
+=======
 >>>>>>> origin/Yo
     /** Creates new form Table */
     static AudioStream as;
@@ -55,7 +61,11 @@ public class Table extends javax.swing.JFrame {
     public static void IDatabase1() {
         try {
 <<<<<<< HEAD
+<<<<<<< HEAD
            InputStream in = new FileInputStream("sound555.wav");
+=======
+           InputStream in = new FileInputStream("sound1.wav");
+>>>>>>> origin/Yo
 =======
            InputStream in = new FileInputStream("sound1.wav");
 >>>>>>> origin/Yo
