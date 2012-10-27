@@ -54,6 +54,8 @@ public class Table extends javax.swing.JFrame {
 
         }
      }
+    
+    // input bomb
     public int inputBomb(int sumbomb1){
     	String bomb1 = "";
     	do{
@@ -62,6 +64,8 @@ public class Table extends javax.swing.JFrame {
     	}while(sumbomb1<1 || sumbomb1>10);
     	return sumbomb1;
     }
+    
+    // generate random bomb
     public void genbomb(){
          List<Integer> generatedNumbers = new ArrayList<Integer>();
         for(int i=0; i<36; i++) { 
@@ -81,6 +85,8 @@ public class Table extends javax.swing.JFrame {
         }
 
     }
+    
+    // constructor
     public Table() {
         initComponents();
         JOptionPane.showMessageDialog(null, null, "ยินดีตอนรับเข้าสู่เกมส์ ^^เฮ้ย! ระเบิด.ตุ้มๆๆ!!^^",0, icon4);
@@ -148,9 +154,9 @@ public class Table extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 600));
-
+        
         label1.setText("Player Turn");
-
+        
         jButton6.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jButton6StateChanged(evt);
@@ -312,11 +318,6 @@ public class Table extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(153, 255, 255));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -542,7 +543,7 @@ public class Table extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -729,6 +730,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     jButton4.setEnabled(false);
 }//GEN-LAST:event_jButton4ActionPerformed
 
+	// reset button
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         jButton1.setBackground(new java.awt.Color(153, 255, 255));
@@ -884,10 +886,6 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         IDatabase1();
 
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton6StateChanged
         // TODO add your handling code here:
@@ -1660,6 +1658,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
         //</editor-fold>
         
         /* Create and display the form */
